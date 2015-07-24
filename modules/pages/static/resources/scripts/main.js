@@ -1,8 +1,9 @@
 
 window.onload = function () {
 	var light = document.getElementById('light');
+	var buttons = [document.getElementById('button1'), document.getElementById('button2'), document.getElementById('button3')];
 
-	document.getElementById('button1').addEventListener('click', function () {
+	buttons[0].addEventListener('click', function () {
 		if (socket !== undefined) {
 			socket.emit('toggle', {button: 1});
 		} else {
@@ -13,7 +14,7 @@ window.onload = function () {
 
 		showLight();
 	});
-	document.getElementById('button2').addEventListener('click', function () {
+	buttons[1].addEventListener('click', function () {
 		if (socket !== undefined) {
 			socket.emit('toggle', {button: 2});
 		} else {
@@ -24,7 +25,7 @@ window.onload = function () {
 
 		showLight();
 	});
-	document.getElementById('button3').addEventListener('click', function () {
+	buttons[2].addEventListener('click', function () {
 		if (socket !== undefined) {
 			socket.emit('toggle', {button: 3});
 		} else {
@@ -53,8 +54,23 @@ window.onload = function () {
 		// --------------------
 		// [bool]:	data.states
 
-		console.log(data);
+		if (data.button !== undefined) {
+			if (data.state) {
+				buttons[data.button - 1].setAttribute('on', '');
+			} else {
+				buttons[data.button - 1].removeAttribute('on');
+			}
+		} else {
+			for (var i = 0; i < data.states.length && i < buttons.length; i++) {
+				if (data.states[i]) {
+					buttons[i].setAttribute('on', '');
+				} else {
+					buttons[i].removeAttribute('on');
+				}
+			}
+		}
 	});
+	socket.emit('get');
 };
 
 function showLight () {

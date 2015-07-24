@@ -32,6 +32,19 @@ body {
 	width: 122px;
 	height: 64px;
 }
+#remote #button1::before {
+    content: "off";
+    position: absolute;
+    left: 37px;
+    top: 4px;
+    font-size: 40px;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.7);
+    transform: rotate(-1deg);
+}
+#remote #button1[on]::before {
+	content: "on";
+}
 
 #remote #button2 {
 	position: absolute;
@@ -40,6 +53,19 @@ body {
 	width: 122px;
 	height: 64px;
 }
+#remote #button2::before {
+    content: "off";
+    position: absolute;
+    left: 37px;
+    top: 4px;
+    font-size: 40px;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.7);
+    transform: rotate(1deg);
+}
+#remote #button2[on]::before {
+	content: "on";
+}
 
 #remote #button3 {
 	position: absolute;
@@ -47,4 +73,17 @@ body {
 	top: 276px;
 	width: 122px;
 	height: 64px;
+}
+#remote #button3::before {
+    content: "off";
+    position: absolute;
+    left: 37px;
+    top: 4px;
+    font-size: 40px;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.7);
+    transform: rotate(0deg);
+}
+#remote #button3[on]::before {
+	content: "on";
 }
