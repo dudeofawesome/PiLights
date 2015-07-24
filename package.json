@@ -1,0 +1,32 @@
+{
+  "name": "PiLights",
+  "version": "0.0.1",
+  "description": "NodeJS based controller for remote controlled lights",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main",
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dudeofawesome/PiLights"
+  },
+  "keywords": [
+    "Raspberry",
+    "Pi",
+    "Lights",
+    "Remote",
+    "Controller"
+  ],
+  "author": "Louis Orleans <louis@orleans.io> (http://orleans.io/)",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/dudeofawesome/PiLights/issues"
+  },
+  "homepage": "https://github.com/dudeofawesome/PiLights",
+  "dependencies": {
+    "express": "^4.13.1",
+    "gulp": "^3.9.0",
+    "request": "^2.59.0"
+  }
+}
