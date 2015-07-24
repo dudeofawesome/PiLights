@@ -1,0 +1,50 @@
+body {
+	background-color: black;
+	align-content: center;
+}
+
+#remote {
+	position: relative;
+	width: 287px;
+	height: 627px;
+	margin: auto;
+}
+
+#remote #light {
+	position: absolute;
+	left: 32px;
+	top: 85px;
+	width: 21px;
+	height: 20px;
+
+	opacity: 0;
+	border-radius: 15px;
+	background-color: rgba(255, 0, 0, 0.8);
+
+	transition: opacity 0.1s;
+	-webkit-transition: opacity 0.1s;
+}
+
+#remote #button1 {
+	position: absolute;
+	left: 82px;
+	top: 127px;
+	width: 122px;
+	height: 64px;
+}
+
+#remote #button2 {
+	position: absolute;
+	left: 80px;
+	top: 202px;
+	width: 122px;
+	height: 64px;
+}
+
+#remote #button3 {
+	position: absolute;
+	left: 82px;
+	top: 276px;
+	width: 122px;
+	height: 64px;
+}

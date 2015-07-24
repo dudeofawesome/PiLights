@@ -1,7 +1,7 @@
 {
   "name": "PiLights",
   "version": "0.0.1",
-  "description": "NodeJS based controller for remote controlled lights",
+  "description": "NodeJS based controller for Vik's remote controlled lights",
   "main": "main.js",
   "scripts": {
     "start": "node main",
@@ -27,6 +27,7 @@
   "dependencies": {
     "express": "^4.13.1",
     "gulp": "^3.9.0",
-    "request": "^2.59.0"
+    "request": "^2.59.0",
+    "socket.io": "^1.3.6"
   }
 }
