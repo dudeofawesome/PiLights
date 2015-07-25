@@ -35,12 +35,12 @@ module.exports = {
             console.log('Lights listening at http://%s:%s', host, port);
         });
 
-        var serverServer = serverHTTP.listen(7533, function () {
-            var host = serverServer.address().address;
-            var port = serverServer.address().port;
-
-            console.log('Remote API listening at http://%s:%s', host, port);
-        })
+        // var serverServer = serverHTTP.listen(7533, function () {
+        //     var host = serverServer.address().address;
+        //     var port = serverServer.address().port;
+        //
+        //     console.log('Remote API listening at http://%s:%s', host, port);
+        // });
 
         return this;
     }
