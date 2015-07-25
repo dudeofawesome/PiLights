@@ -45,7 +45,7 @@ module.exports = {
     }
 };
 
-app.get('/', function (req, res) {
+app.get('/all', function (req, res) {
     remote.toggle();
     res.send('Lights toggled!');
 });
@@ -61,7 +61,7 @@ app.get('/3', function (req, res) {
     remote.toggle(3);
     res.send('Light 3 toggled!');
 });
-app.get('/remote', function (req, res) {
+app.get('/', function (req, res) {
     res.send(PAGES.remote);
 });
 app.use(express.static('./modules/pages/static/'));
