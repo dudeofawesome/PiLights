@@ -19,6 +19,7 @@ var PAGES = {
 module.exports = {
     init: function (remoteControl) {
         remote = remoteControl;
+        remote.init(serverIO);
         remote.setCallbacks({
             stateChanged: function (buttonStates) {
                 clientIO.emit('get', {states: buttonStates});
