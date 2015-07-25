@@ -3,7 +3,12 @@ var express = require('express');
 var app = express();
 
 var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var clientIO = require('socket.io')(http);
+
+var serverExpress = require('express');
+var serverApp = serverExpress();
+var serverHTTP = require('http').Server(serverApp);
+var serverIO = require('socket.io')(serverHTTP);
 
 var remote;
 
@@ -16,7 +21,7 @@ module.exports = {
         remote = remoteControl;
         remote.setCallbacks({
             stateChanged: function (buttonStates) {
-                io.emit('get', {states: buttonStates});
+                clientIO.emit('get', {states: buttonStates});
             }
         });
 
@@ -28,6 +33,13 @@ module.exports = {
 
             console.log('Lights listening at http://%s:%s', host, port);
         });
+
+        var serverServer = serverHTTP.listen(7533, function () {
+            var host = serverServer.address().address;
+            var port = serverServer.address().port;
+
+            console.log('Remote API listening at http://%s:%s', host, port);
+        })
 
         return this;
     }
@@ -54,7 +66,7 @@ app.get('/remote', function (req, res) {
 });
 app.use(express.static('./modules/pages/static/'));
 
-io.on('connection', function(socket){
+clientIO.on('connection', function(socket){
     console.log('user connected');
     socket.on('toggle', function (data) {
         remote.toggle(data.button);

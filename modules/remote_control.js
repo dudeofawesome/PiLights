@@ -3,6 +3,10 @@ var buttonStates = [false, false, false];
 var callbacks = {};
 
 module.exports = {
+    init: function (io) {
+        module.exports.io = io;
+    },
+    io: undefined,
     toggle: function (button) {
         change(button);
     },
@@ -26,7 +30,7 @@ function change (button, state) {
     switch (button) {
         case 1:
             if (state === undefined || (state !== undefined && buttonStates[button - 1] !== state)) {
-                exec('./modules/tlit 7');
+                module.exports.io.emit('toggle', {button: button});
                 buttonStates[button - 1] = !buttonStates[button - 1];
             }
             break;
