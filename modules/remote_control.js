@@ -1,4 +1,3 @@
-var exec = require('child_process').exec;
 var buttonStates = [false, false, false];
 var callbacks = {};
 
