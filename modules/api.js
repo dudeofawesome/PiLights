@@ -28,7 +28,7 @@ module.exports = {
 
         PAGES.remote = fs.readFileSync('./modules/pages/remote.html').toString();
 
-        var server = http.listen((process.env.PORT | 8080), function () {
+        var server = http.listen(process.env.PORT | 8080, function () {
             var host = server.address().address;
             var port = server.address().port;
 
