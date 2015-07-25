@@ -8,5 +8,3 @@ echo "0" > /sys/class/gpio/gpio$1/value
 echo "1" > /sys/class/gpio/gpio$1/value
 sleep 0.5
 echo "0" > /sys/class/gpio/gpio$1/value
-
-echo Pin $1 has been toggled. 
