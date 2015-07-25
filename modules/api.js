@@ -28,19 +28,19 @@ module.exports = {
 
         PAGES.remote = fs.readFileSync('./modules/pages/remote.html').toString();
 
-        var server = http.listen(process.env.PORT | 8080, function () {
+        var server = http.listen(process.env.PORT | 8080, '0.0.0.0', function () {
             var host = server.address().address;
             var port = server.address().port;
 
             console.log('Lights listening at http://%s:%s', host, port);
         });
 
-        // var serverServer = serverHTTP.listen(7533, function () {
-        //     var host = serverServer.address().address;
-        //     var port = serverServer.address().port;
-        //
-        //     console.log('Remote API listening at http://%s:%s', host, port);
-        // });
+        var serverServer = serverHTTP.listen(7533, function () {
+            var host = serverServer.address().address;
+            var port = serverServer.address().port;
+
+            console.log('Remote API listening at http://%s:%s', host, port);
+        });
 
         return this;
     }
