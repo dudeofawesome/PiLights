@@ -29,6 +29,7 @@ function change (button, state) {
     switch (button) {
         case 1:
             if (state === undefined || (state !== undefined && buttonStates[button - 1] !== state)) {
+                console.log('sending');
                 module.exports.io.emit('toggle', {button: button});
                 buttonStates[button - 1] = !buttonStates[button - 1];
             }
