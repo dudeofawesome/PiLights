@@ -31,10 +31,12 @@ module.exports = {
 
 
         var socket = require('socket.io-client')('http://pilights.herokuapp.com:7533');
+        // var socket = require('socket.io-client')('http://localhost:7533');
         socket.on('connect', function () {
             console.log('Connected to remote server');
         });
         socket.on('toggle', function (data) {
+            console.log('receiving');
             remote.toggle(data.button);
         });
     }

@@ -22,12 +22,12 @@ module.exports = {
 
         PAGES.remote = fs.readFileSync('./modules/pages/remote.html').toString();
 
-        var server = http.listen(8080, function () {
-            var host = server.address().address;
-            var port = server.address().port;
-
-            console.log('Lights listening at http://%s:%s', host, port);
-        });
+        // var server = http.listen(8181, function () {
+        //     var host = server.address().address;
+        //     var port = server.address().port;
+        //
+        //     console.log('Lights listening at http://%s:%s', host, port);
+        // });
 
         return this;
     }
